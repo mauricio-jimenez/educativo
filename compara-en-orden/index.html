@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Compara en orden</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style.css">				
+	<style>
+		.muestras {
+			width: 11%;
+			height: 50%;
+			border-radius: 18px;
+		}
+
+		.levantada {
+			align-items: flex-start;
+		}
+	</style>
+</head>
+<body>
+	<div class="marcador">
+		<p id="puntuacion">0</p>
+	</div>
+	<div class="out-canvas">
+		<canvas id="canvas" width=100 height= 100></canvas>
+	</div>
+	<div class="out-text">
+   		<p id="mensaje">Compara las barras escogidas</p>
+	</div>
+	<hr>
+	<div class="teclado">
+		<div class="botonera">
+			<button id="boton1" class="muestras"></button>
+			<button id="boton2" class="muestras"></button>
+		</div>
+		<div class="botonera levantada">
+			<button id="boton3" class="opciones boton">></button>
+			<button id="boton4" class="opciones boton"><</button>
+		</div>
+	</div>
+
+	<audio id="buena" src="../sonidos/buena.mp3"></audio>
+	<audio id="fanfare" src="../sonidos/fanfare.mp3"></audio>	
+	
+	<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	margin:0;
+	background-color: black;
+	color: white;
+}
+
+
+.marcador {
+	height: 8vh;
+	margin-right: 10%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.out-canvas {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+}
+
+#canvas {
+	height: 100%;
+	padding: 5%;
+}
+
+.out-text {
+	height: 15vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#mensaje {
+	font-size: 18px;
+}
+
+
+.teclado {
+	height: 24vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.botonera {
+	display:flex;		
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	height: 50%
+}
+
+.boton {
+	border-radius:8px;
+	width:20%;
+	height:60%;
+	font-size: 25px;
+}
