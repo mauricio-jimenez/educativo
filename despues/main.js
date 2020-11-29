@@ -45,7 +45,7 @@ function reset() {
 function actualizaMensaje() {
 	let mensaje = document.getElementById("mensaje")
 	let texto = traduccionColores[ cicloAnimacion [ pregunta ]]
-	mensaje.innerHTML = "¿Qué color aparece despues del " + texto + "?"
+	mensaje.innerHTML = "¿Qué color aparece despues que el " + texto + "?"
 }
 
 function dibujaPantalla() {
