@@ -1,7 +1,7 @@
 var puntuacion;
 var ctx;
 var escala;
-const colores = ["orange", "blue"]
+const colores = ["#700", "#700"]
 var largoBarras = [];
 var respuestaCorrecta;
 
@@ -97,7 +97,7 @@ function evaluacion(e) {
 		nuevaPuntuacion = parseInt(puntuacion.innerHTML) + 1;
 		puntuacion.innerHTML = nuevaPuntuacion; 		
 
-		if ( nuevaPuntuacion == 7) {
+		if ( nuevaPuntuacion == 20) {
 
 			document.getElementById("mensaje").innerHTML = "Muy bien! Lo lograste!";
 			document.getElementById("fanfare").play();
