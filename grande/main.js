@@ -1,8 +1,10 @@
 var puntuacion;
 var ctx;
 var escala;
-const colores = ["#700", "#700"]
-var largoBarras = [1,2,3,4];
+const colores = ["red", "blue", "yellow", "green", "purple", "grey"]; 
+const largoBarras = [1,2,3,4,5,6];
+var cableadoColores = [1,2,3,4,5,6];
+var pregunta = [1,2,3,4,5,6];
 var respuestaCorrecta;
 
 function inicializacion() {
@@ -10,7 +12,6 @@ function inicializacion() {
 	// TODO reorientacion
 	
 	let canvas;
-	let comparadores;
 
 	puntuacion = document.getElementById('puntuacion');
 	escala = Math.min( window.innerWidth, window.innerHeight) / 100;
@@ -23,27 +24,19 @@ function inicializacion() {
 		return 
 	}
 
-	ctx = canvas.getContext('2d');
+	ctx = canvas.getContext('2d');	
 	
-	//  botones	
-	
-	comparadores = [">", "<"];
-
-	let botones = document.querySelectorAll("button");	
-	for (i = 0; i < 2; i++) {
-		// valores
-		botones[i].innerHTML = comparadores[i];
-		// eventlistener
-		botones[i].addEventListener("click", evaluacion );
-	}
+	// eventlistener
+	document.getElementById("boton1").addEventListener("click", evaluacion );
+	document.getElementById("boton2").addEventListener("click", evaluacion );
 }
 
 function draw() {
      
-	let margenX = 15 ;
-	let espaciado = 50 ;
-	let thickness = 20 ;
-	let paso = 20 ;
+	let margenX = 25 ;
+	let espaciado = 35 ;
+	let thickness = 15 ;
+	let paso = 16 ;
 	let x;
 	let y;
 	let dx;
@@ -53,36 +46,41 @@ function draw() {
 
 	for (i = 0; i < 2; i++){
 		
-		x = (margenX + i * espaciado) * escala ;
-		y = 100 * escala;
-		dx = thickness * escala ;
-		dy = largoBarras[i] * paso * -1 * escala ; 
+		x = (margenX + i * espaciado) * escala 
+		y = 100 * escala
+		dx = thickness * escala 
+		dy = largoBarras[ pregunta[i] - 1 ] * paso * -1 * escala  
 
-		ctx.fillStyle = colores[i];
+		ctx.fillStyle = colores[ cableadoColores[ pregunta[i] - 1] - 1 ]
 		ctx.fillRect( x, y, dx, dy);
     }
 }
 
 function reset() {
 	
+	let boton1
+	let boton2
+	
+	shuffle(pregunta)
+	shuffle(cableadoColores)
 
-	shuffle(largoBarras);
+	// arbitrariamente usando indices 0 y 1
+	boton1 = document.getElementById("boton1")
+	boton1.style.backgroundColor = colores[ cableadoColores[ pregunta[0] - 1] - 1 ]
+	boton1.setAttribute('value', pregunta[0])
 
-	if ( largoBarras[0] > largoBarras[1] ) 
-	{
-		respuestaCorrecta = "&gt;";
-	}
-	else 
-	{
-		respuestaCorrecta = "&lt;";
-	}
+	boton2 = document.getElementById("boton2")
+	boton2.style.backgroundColor = colores[ cableadoColores[ pregunta[1] - 1] - 1 ]
+	boton2.setAttribute('value', pregunta[1])
+
+	respuestaCorrecta = Math.max( pregunta[0], pregunta[1] )
 }
 
 function evaluacion(e) {
 	
 	let nuevaPuntuacion;
 
-	respuesta = e.currentTarget.innerHTML;		
+	respuesta = e.currentTarget.getAttribute('value')
 
 	if (respuesta == respuestaCorrecta) {		
 		
@@ -95,7 +93,7 @@ function evaluacion(e) {
 			document.getElementById("fanfare").play();
 			return
 		}
-		
+	
 		document.getElementById("buena").play();
 
 	}
@@ -110,7 +108,6 @@ function evaluacion(e) {
 	reset();
 	draw()
 }
-
 
 var shuffle = function (array) {
 	// helper
