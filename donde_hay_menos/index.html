@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Donde hay menos</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style.css">	
+	<style>
+		.out-canvas {
+			flex-direction: column;
+			height: 75vh;
+		}
+
+		img {
+			padding: 20px;
+		}
+
+		.out-text {
+			height: 17vh;
+			align-items: top;
+		}
+	</style>
+</head>
+<body>
+	<div class="marcador">
+		<p id="puntuacion">0</p>
+	</div>
+	<div class="out-canvas">
+		<img src="" alt="imagen 1" value=0>
+		<img src="" alt="imagen 2" value=1>
+	</div>
+	<div class="out-text">
+   		<h4 id="mensaje" ></h4>
+	</div>
+	
+	<audio id="buena" src="../sonidos/buena.mp3"></audio>
+	<audio id="fanfare" src="../sonidos/fanfare.mp3"></audio>
+
+	<script src="main.js"></script>
+
+</body>
+</html>
