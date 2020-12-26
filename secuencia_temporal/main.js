@@ -1,5 +1,5 @@
 
-const colores = ["black", "#500", "#050", "#005"] 
+const colores = ["black", "#6a6", "#a66", "#66a"] 
 
 var puntuacion = 0
 var canvasContext
