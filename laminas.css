@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	margin:0;
+	background-color: black;
+	color: white;
+}
+
+
+.marcador {
+	height: 8vh;
+	margin-right: 10%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.out-canvas {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20vh;
+	margin-top: 5vh;
+}
+
+#canvas {
+	width: 32vw;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+}
+
+.out-text {
+	height: 12vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#mensaje {
+	font-size: 20px;
+}
+
+.teclado {
+	height: 50vh;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.lamina {
+	width: 32vw;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+}
